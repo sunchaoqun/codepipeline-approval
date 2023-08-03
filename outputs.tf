@@ -58,3 +58,8 @@ output "s3_bucket_name" {
   value       = module.s3_artifacts_bucket.bucket
   description = "The Name of the S3 Bucket"
 }
+
+output "lambda_arn" {
+  value       = module.codepipeline_lambda_function_terraform.arn
+  description = "The ARN of the Lambda Checker ARN"
+}

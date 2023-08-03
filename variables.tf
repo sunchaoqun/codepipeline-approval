@@ -49,7 +49,7 @@ variable "environment" {
 
 variable "stage_input" {
   description = "Tags to be attached to the CodePipeline"
-  type        = list(map(any))
+  type        = any
 }
 
 variable "build_projects" {
@@ -85,4 +85,9 @@ variable "build_project_source" {
   description = "aws/codebuild/standard:4.0"
   type        = string
   default     = "CODEPIPELINE"
+}
+
+variable "approver_names" {
+  description = "Approvers to add approval policy"
+  type        = list(string)
 }

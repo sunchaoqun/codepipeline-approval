@@ -39,3 +39,8 @@ variable "create_new_role" {
   description = "Flag for deciding if a new role needs to be created"
   default     = true
 }
+
+variable "approver_names" {
+  description = "Approvers to add approval policy"
+  type        = list(string)
+}

@@ -95,6 +95,7 @@ module "codepipeline_iam_role" {
   source_repository_name     = var.source_repo_name
   kms_key_arn                = module.codepipeline_kms.arn
   s3_bucket_arn              = module.s3_artifacts_bucket.arn
+  approver_names             = var.approver_names
   tags = {
     Project_Name = var.project_name
     Environment  = var.environment
@@ -102,6 +103,15 @@ module "codepipeline_iam_role" {
     Region       = local.region
   }
 }
+
+module "codepipeline_lambda_function_terraform" {
+  depends_on = [
+  ]
+  source = "./modules/lambda"
+  project_name          = var.project_name
+  lambda_function_name  = "lambda_checker_function"
+}
+
 # Module for Infrastructure Validate, Plan, Apply and Destroy - CodePipeline
 module "codepipeline_terraform" {
   depends_on = [
