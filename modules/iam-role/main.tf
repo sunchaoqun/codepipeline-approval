@@ -186,7 +186,7 @@ policy = <<EOF
         "Resource": "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}/need_to_approval/finance_check",
         "Condition": {
             "StringNotEquals": {
-                "aws:username": "billysun"
+                "aws:username": "chaoqun"
             }
         }
     }
