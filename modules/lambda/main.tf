@@ -68,7 +68,7 @@ runtime                        = "python3.8"
 depends_on                     = [aws_iam_role_policy_attachment.attach_iam_policy_to_iam_role]
 environment {
     variables = {
-      CODEPIPELINE_NAME = "${var.project_name}-pipeline"
+      CODEPIPELINE_NAME = "${var.project_name}"
     }
   }
 }

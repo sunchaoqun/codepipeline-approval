@@ -1,4 +1,4 @@
-project_name       = "tf-approval_testing_aaa"
+project_name       = "tf-approval_testing"
 environment        = "dev"
 source_repo_name   = "tf-test"
 source_repo_branch = "main"

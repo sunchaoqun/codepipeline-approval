@@ -6,7 +6,7 @@
 
 resource "aws_codepipeline" "terraform_pipeline" {
 
-  name     = "${var.project_name}-pipeline"
+  name     = "${var.project_name}"
   role_arn = var.codepipeline_role_arn
   tags     = var.tags
 

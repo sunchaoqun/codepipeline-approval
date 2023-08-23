@@ -35,7 +35,7 @@ EOF
 # TO-DO : replace all * with resource names / arn
 resource "aws_iam_policy" "codepipeline_policy" {
   count       = var.create_new_role ? 1 : 0
-  name        = "${var.project_name}-codepipeline-policy"
+  name        = "${var.project_name}-policy"
   description = "Policy to allow codepipeline to execute"
   tags        = var.tags
   policy      = <<EOF
@@ -135,7 +135,7 @@ resource "aws_iam_role_policy_attachment" "codepipeline_role_attach" {
 }
 
 resource "aws_iam_policy" "codepipeline_approval_policy" {
-  name        = "${var.project_name}-codepipeline-approval-policy"
+  name        = "${var.project_name}-approval-policy"
   description = "Policy to allow codepipeline to approval"
   tags        = var.tags
 policy = <<EOF
@@ -162,8 +162,8 @@ policy = <<EOF
                 "codepipeline:ListPipelineExecutions"
             ],
             "Resource": [
-              "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}-pipeline",
-              "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}-pipeline/*"
+              "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}",
+              "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}/*"
             ]
         },
     {
@@ -171,7 +171,7 @@ policy = <<EOF
         "Action": [
             "codepipeline:PutApprovalResult"
         ],
-        "Resource": "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}-pipeline/need_to_approval/basic_check",
+        "Resource": "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}/need_to_approval/basic_check",
         "Condition": {
             "StringNotEquals": {
                 "aws:username": "billysun"
@@ -183,7 +183,7 @@ policy = <<EOF
         "Action": [
             "codepipeline:PutApprovalResult"
         ],
-        "Resource": "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}-pipeline/need_to_approval/finance_check",
+        "Resource": "arn:aws:codepipeline:${data.aws_region.current.id}:${data.aws_caller_identity.current.account_id}:${var.project_name}/need_to_approval/finance_check",
         "Condition": {
             "StringNotEquals": {
                 "aws:username": "billysun"
