@@ -45,6 +45,13 @@ Running these four stages ensures the integrity of the terraform configurations.
 |   |   |-- main.tf
 |   |   |-- outputs.tf
 |   |   `-- variables.tf
+|   |-- lambda
+|   |   `-- python
+|   |       `-- index.py
+|   |   |-- data
+|   |   |-- main.tf
+|   |   |-- outputs.tf
+|   |   `-- variables.tf
 |   `-- s3
 |       |-- README.md
 |       |-- main.tf
