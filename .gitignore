@@ -3,3 +3,4 @@
 /.terraform.lock.hcl
 /terraform.tfstate
 /terraform.tfstate.backup
+modules/lambda/python/lambda_checker_function-python.zip

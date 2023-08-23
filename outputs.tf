@@ -19,16 +19,6 @@ output "codecommit_arn" {
   description = "The ARN of the Codecommit repository"
 }
 
-output "codebuild_name" {
-  value       = module.codebuild_terraform.name
-  description = "The Name of the Codebuild Project"
-}
-
-output "codebuild_arn" {
-  value       = module.codebuild_terraform.arn
-  description = "The ARN of the Codebuild Project"
-}
-
 output "codepipeline_name" {
   value       = module.codepipeline_terraform.name
   description = "The Name of the CodePipeline"

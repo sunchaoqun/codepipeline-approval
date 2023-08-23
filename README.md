@@ -23,11 +23,6 @@ Running these four stages ensures the integrity of the terraform configurations.
 |-- locals.tf
 |-- main.tf
 |-- modules
-|   |-- codebuild
-|   |   |-- README.md
-|   |   |-- main.tf
-|   |   |-- outputs.tf
-|   |   `-- variables.tf
 |   |-- codecommit
 |   |   |-- README.md
 |   |   |-- data.tf
