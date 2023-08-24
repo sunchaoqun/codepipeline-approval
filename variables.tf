@@ -52,11 +52,6 @@ variable "stage_input" {
   type        = any
 }
 
-variable "build_projects" {
-  description = "Tags to be attached to the CodePipeline"
-  type        = list(string)
-}
-
 variable "builder_compute_type" {
   description = "Relative path to the Apply and Destroy build spec file"
   type        = string

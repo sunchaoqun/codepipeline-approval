@@ -20,4 +20,3 @@ stage_input = [
     {name = "Deploy", category = "Approval", provider = "Manual", run_order = 1, configuration = {}},
   ]},
 ]
-build_projects = ["need_to_approval", "Deploy"]
